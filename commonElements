@@ -1,0 +1,58 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n1 = 3, n2 = 3, n3 = 3;
+	
+
+	int A[]={3,3,3};
+	int B[]={3,3,3};
+	int C[]={3,3,3};
+vector <int >v;
+int i=0,j=0,k=0;
+while(i<n1 && j<n2&& k<n3){
+
+
+	if(A[i]==B[j]  && A[i]==C[k]){
+		v.push_back(A[i]);
+		i++;
+		j++;
+		k++;
+
+
+	}
+
+	else if( A[i]<B[j] &&  A[i]<C[k]){
+		i++;
+	}
+	else if(C[k]<B[j] &&  C[k]<A[i]){
+		k++;
+
+	}
+	else j++;
+
+int p=A[i-1];
+  while(A[i]==p)
+  {
+
+    i++;
+  }
+int q=B[j-1];
+   while(B[j]==q)
+   j++;
+
+
+int r=C[k-1];
+   while(C[k]==r)
+    k++;
+
+
+}
+
+
+for(auto A:v)
+cout<<A<<" ";
+	return 0;
+}
